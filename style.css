@@ -1,0 +1,271 @@
+body{
+margin:0;
+font-family:Arial,sans-serif;
+color:white;
+font-size:18px;
+}
+
+.container{
+min-height:100vh;
+background:#0c0c0c;
+background-image:
+linear-gradient(0deg,transparent 24%,#1e1e1e 25%,#1e1e1e 26%,transparent 27%,transparent 74%,#1e1e1e 75%,#1e1e1e 76%,transparent 77%),
+linear-gradient(90deg,transparent 24%,#1e1e1e 25%,#1e1e1e 26%,transparent 27%,transparent 74%,#1e1e1e 75%,#1e1e1e 76%,transparent 77%);
+background-size:55px 55px;
+animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+from{background-position:0 0,0 0}
+to{background-position:55px 55px,-55px -55px}
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(15,15,15,.75);
+backdrop-filter:blur(12px);
+padding:12px 30px;
+border-radius:18px;
+display:flex;
+justify-content:space-between;
+width:85%;
+z-index:1000;
+}
+
+.navbar ul{
+display:flex;
+gap:25px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+opacity:.8;
+}
+
+/* HERO */
+header{
+padding:130px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:6rem;
+background:linear-gradient(135deg,#38bdf8,#9333ea);
+background-clip: text;        /* estándar */
+-webkit-background-clip: text; /* compatibilidad Chrome/Safari */
+color:transparent;
+}
+
+.shiny-text{
+  font-size: 2rem;   /* más grande y protagonista */
+  font-weight: 600;
+  background: linear-gradient(120deg,#b5b5b5 40%,#ffffff 50%,#b5b5b5 60%);
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;        /* estándar */
+  -webkit-background-clip: text; /* compatibilidad Chrome/Safari */
+  animation: shine 3s linear infinite;
+}
+
+
+@keyframes shine{
+from{background-position:200%}
+to{background-position:-200%}
+}
+
+.btn-animated{
+margin-top:30px;
+padding:15px 40px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#38bdf8,#9333ea);
+color:white;
+cursor:pointer;
+}
+
+/* SECCIONES */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.compact{
+padding:40px 20px;
+}
+
+h2{
+font-size:3rem;
+margin-bottom:25px;
+}
+
+/* STACK */
+.stack{
+display:flex;
+flex-direction:column;
+gap:50px;
+align-items:center;
+}
+
+.stack-card{
+background:#1e293b;
+padding:50px;
+border-radius:30px;
+width:80%;
+}
+
+/* BENEFICIOS Y PRECIOS */
+.benefits,.prices{
+display:flex;
+gap:18px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.benefits div,.price-card{
+background:#1e293b;
+padding:22px;
+border-radius:14px;
+width:220px;
+}
+
+.price-card p{
+opacity:.8;
+margin-top:8px;
+font-size:1rem;
+}
+
+.highlight{
+border:2px solid #38bdf8;
+}
+
+/* COMPARACIÓN */
+.compare-box{
+display:flex;
+gap:30px;
+justify-content:center;
+}
+
+.bad{color:#f87171}
+.good{color:#4ade80}
+
+/* BOTÓN FLOTANTE */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 18px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+/* PAQUETES EN VERTICAL */
+
+.pricing-vertical{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.price-column{
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+gap:30px;
+flex-wrap:nowrap;   /* evita que se bajen */
+}
+
+
+
+.price-card{
+background:#1e293b;
+padding:45px;
+border-radius:28px;
+text-align:left;
+box-shadow:0 15px 40px rgba(0,0,0,.5);
+position:relative;
+transition:transform .3s ease;
+}
+
+.price-card:hover{
+transform:scale(1.03);
+}
+
+.price-card h3{
+font-size:1.8rem;
+margin-bottom:15px;
+}
+
+.old-price{
+text-decoration:line-through;
+opacity:.6;
+font-size:1.1rem;
+}
+
+.new-price{
+font-size:2.4rem;
+font-weight:800;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.price-card ul{
+padding-left:18px;
+line-height:1.9;
+}
+
+.price-card li{
+margin-bottom:6px;
+}
+
+.highlight{
+border:2px solid #38bdf8;
+}
+
+.premium{
+border:2px solid #9333ea;
+}
+
+.tag{
+position:absolute;
+top:-14px;
+right:20px;
+background:#38bdf8;
+padding:6px 14px;
+border-radius:20px;
+font-size:.9rem;
+font-weight:600;
+color:black;
+}
+
+.popular{
+background:#4ade80;
+}
+
+.premium-tag{
+background:#9333ea;
+color:white;
+}
+
+.price-card{
+flex:1;
+min-width:260px;
+max-width:340px;
+}
+
+@media (max-width:900px){
+  .price-column{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
