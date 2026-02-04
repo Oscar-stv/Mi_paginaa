@@ -1,80 +1,74 @@
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:system-ui,Arial;
 color:white;
-font-size:18px;
+background:#0c0c0c;
 }
 
 .container{
 min-height:100vh;
-background:#0c0c0c;
-background-image:
-linear-gradient(0deg,transparent 24%,#1e1e1e 25%,#1e1e1e 26%,transparent 27%,transparent 74%,#1e1e1e 75%,#1e1e1e 76%,transparent 77%),
-linear-gradient(90deg,transparent 24%,#1e1e1e 25%,#1e1e1e 26%,transparent 27%,transparent 74%,#1e1e1e 75%,#1e1e1e 76%,transparent 77%);
-background-size:55px 55px;
-animation:gridMove 20s linear infinite;
-}
-
-@keyframes gridMove{
-from{background-position:0 0,0 0}
-to{background-position:55px 55px,-55px -55px}
+padding-bottom:80px;
 }
 
 /* NAVBAR */
+
 .navbar{
 position:fixed;
-top:20px;
+top:15px;
 left:50%;
 transform:translateX(-50%);
-background:rgba(15,15,15,.75);
-backdrop-filter:blur(12px);
-padding:12px 30px;
-border-radius:18px;
+width:90%;
 display:flex;
 justify-content:space-between;
-width:85%;
+align-items:center;
+background:rgba(15,15,15,.8);
+backdrop-filter:blur(12px);
+padding:12px 20px;
+border-radius:16px;
 z-index:1000;
 }
 
 .navbar ul{
 display:flex;
-gap:25px;
+gap:16px;
 list-style:none;
-margin:0;
 padding:0;
+margin:0;
 }
 
 .navbar a{
 color:white;
 text-decoration:none;
-opacity:.8;
+font-size:.9rem;
+opacity:.85;
 }
 
 /* HERO */
+
 header{
-padding:130px 20px;
+padding:140px 16px 80px;
 text-align:center;
 }
 
 header h1{
-font-size:6rem;
+font-size:clamp(2.8rem,6vw,5.5rem);
 background:linear-gradient(135deg,#38bdf8,#9333ea);
-background-clip: text;        /* estándar */
--webkit-background-clip: text; /* compatibilidad Chrome/Safari */
+-webkit-background-clip:text;
 color:transparent;
 }
 
 .shiny-text{
-  font-size: 2rem;   /* más grande y protagonista */
-  font-weight: 600;
-  background: linear-gradient(120deg,#b5b5b5 40%,#ffffff 50%,#b5b5b5 60%);
-  background-size: 200%;
-  color: transparent;
-  background-clip: text;        /* estándar */
-  -webkit-background-clip: text; /* compatibilidad Chrome/Safari */
-  animation: shine 3s linear infinite;
+font-size:clamp(1.2rem,2.5vw,2rem);
+background:linear-gradient(120deg,#aaa 40%,#fff 50%,#aaa 60%);
+background-size:200%;
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 3s linear infinite;
 }
-
 
 @keyframes shine{
 from{background-position:200%}
@@ -82,191 +76,132 @@ to{background-position:-200%}
 }
 
 .btn-animated{
+display:inline-block;
 margin-top:30px;
-padding:22px 65px;
-font-size:22px; 
-border:none;
-border-radius:18px;
+padding:16px 40px;
+font-size:1.1rem;
+border-radius:16px;
 background:linear-gradient(135deg,#38bdf8,#9333ea);
 color:white;
-cursor:pointer;
+text-decoration:none;
 }
 
-/* SECCIONES */
+/* SECTIONS */
+
 section{
-padding:60px 20px;
+padding:60px 16px;
 text-align:center;
 }
 
 .compact{
-padding:40px 20px;
+padding:40px 16px;
 }
 
 h2{
-font-size:3rem;
-margin-bottom:25px;
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:30px;
 }
 
 /* STACK */
+
 .stack{
-display:flex;
-flex-direction:column;
-gap:50px;
-align-items:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+max-width:1100px;
+margin:auto;
 }
 
 .stack-card{
 background:#1e293b;
-padding:50px;
-border-radius:30px;
-width:80%;
+padding:36px;
+border-radius:26px;
 }
 
-/* BENEFICIOS Y PRECIOS */
-.benefits,.prices{
-display:flex;
+/* BENEFITS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:18px;
-justify-content:center;
-flex-wrap:wrap;
+max-width:700px;
+margin:auto;
 }
 
-.benefits div,.price-card{
+.benefits div{
 background:#1e293b;
-padding:22px;
+padding:18px;
 border-radius:14px;
-width:220px;
 }
 
-.price-card p{
-opacity:.8;
-margin-top:8px;
-font-size:1rem;
-}
+/* COMPARE */
 
-.highlight{
-border:2px solid #38bdf8;
-}
-
-/* COMPARACIÓN */
 .compare-box{
 display:flex;
-gap:30px;
+gap:20px;
 justify-content:center;
+flex-wrap:wrap;
 }
 
 .bad{color:#f87171}
 .good{color:#4ade80}
 
-/* BOTÓN FLOTANTE */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 18px;
-border-radius:40px;
-text-decoration:none;
-color:white;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
-/* PAQUETES EN VERTICAL */
-
-.pricing-vertical{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
+/* PRICING */
 
 .price-column{
-display:flex;
-flex-direction:row;
-justify-content:space-between;
-gap:30px;
-flex-wrap:nowrap;   /* evita que se bajen */
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:32px;
+max-width:1100px;
+margin:auto;
 }
-
-
 
 .price-card{
 background:#1e293b;
-padding:45px;
-border-radius:28px;
-text-align:left;
+padding:36px;
+border-radius:26px;
 box-shadow:0 15px 40px rgba(0,0,0,.5);
-position:relative;
-transition:transform .3s ease;
+transition:.3s;
 }
 
 .price-card:hover{
-transform:scale(1.03);
+transform:translateY(-6px);
 }
 
-.price-card h3{
-font-size:1.8rem;
-margin-bottom:15px;
-}
+.highlight{border:2px solid #38bdf8}
+.premium{border:2px solid #9333ea}
 
 .old-price{
-text-decoration:line-through;
 opacity:.6;
-font-size:1.1rem;
+text-decoration:line-through;
 }
 
 .new-price{
-font-size:2.4rem;
+font-size:2rem;
 font-weight:800;
 color:#38bdf8;
-margin-bottom:20px;
 }
 
-.price-card ul{
-padding-left:18px;
-line-height:1.9;
-}
+/* FLOAT BUTTON */
 
-.price-card li{
-margin-bottom:6px;
-}
-
-.highlight{
-border:2px solid #38bdf8;
-}
-
-.premium{
-border:2px solid #9333ea;
-}
-
-.tag{
-position:absolute;
-top:-14px;
-right:20px;
-background:#38bdf8;
-padding:6px 14px;
-border-radius:20px;
-font-size:.9rem;
-font-weight:600;
-color:black;
-}
-
-.popular{
-background:#4ade80;
-}
-
-.premium-tag{
-background:#9333ea;
+.whatsapp{
+position:fixed;
+bottom:18px;
+right:18px;
+background:#25D366;
+padding:14px 20px;
+border-radius:40px;
 color:white;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-.price-card{
-flex:1;
-min-width:260px;
-max-width:340px;
-}
+/* MOBILE TWEAK */
 
-@media (max-width:900px){
-  .price-column{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
+@media(max-width:600px){
+.navbar ul{
+gap:10px;
+font-size:.8rem;
+}
 }
